@@ -4,7 +4,10 @@ const ageEl = document.getElementById('età')
 const kmEl = document.getElementById('km')
 const button = document.querySelector('button')
 
-
+// selezioniamo gli elementi del form
+const fullName = document.getElementById('fullname')
+const userAge = document.getElementById('userage')
+const totalKm = document.getElementById('totalkm')
 
 //al click stampiamo in console
 button.addEventListener('click', function() {
@@ -35,6 +38,12 @@ button.addEventListener('click', function() {
   }
   
   console.log(`Il prezzo del tuo biglietto sarà di: ${totallPrice.toFixed(2)} €`);
+
+
+  // aggiorniamo i valori del form
+  fullName.innerHTML = nameEl.value
+  userAge.innerHTML = ageEl.value
+  totalKm.innerHTML = kmEl.value
 })
 
 
