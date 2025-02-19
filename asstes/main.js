@@ -8,6 +8,8 @@ const button = document.querySelector('button')
 const fullName = document.getElementById('fullname')
 const userAge = document.getElementById('userage')
 const totalKm = document.getElementById('totalkm')
+const finalDiscount = document.getElementById('discount')
+const priceEl = document.getElementById('price')
 
 //al click stampiamo in console
 button.addEventListener('click', function() {
@@ -25,27 +27,37 @@ button.addEventListener('click', function() {
   const kmPrice = 0.21
   let totallPrice = kmPrice * km
   console.log(`Prezzo base: ${totallPrice.toFixed(2)} €`);
+
+  let discount = 0
+  let discountText = '-'
     
   
   if (age < 18 ) {
-    totallPrice = totallPrice * 0.8
-    console.log('Sconto 20% applicato');
+    discount = totallPrice * 0.8
+    discountText = 'Sconto 20%'
+    console.log(discountText)
     
     
   } else if (age >= 65) {
-    totallPrice = totallPrice * 0.6
-    console.log('sconto 40% applicato');
-    
-    
+    discount = totallPrice * 0.6
+    discountText = 'Sconto 40%'    
+    console.log(discountText)
   }
   
-  console.log(`Il prezzo del tuo biglietto sarà di: ${totallPrice.toFixed(2)} €`);
+  // calcoliamo prezzo finale
+  const finalPrice = totallPrice - discount
+  console.log(`Il prezzo del tuo biglietto sarà di: ${finalPrice.toFixed(2)} €`);
 
 
   // aggiorniamo i valori del form
   fullName.innerHTML = nameEl.value
   userAge.innerHTML = ageEl.value
   totalKm.innerHTML = kmEl.value
+  finalDiscount.innerHTML = discountText
+  priceEl.innerHTML = finalPrice.toFixed(2)
+
+
+  return finalDiscount
 })
 
 
