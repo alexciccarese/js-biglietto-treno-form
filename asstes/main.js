@@ -11,6 +11,7 @@ const totalKm = document.getElementById('totalkm')
 
 //al click stampiamo in console
 button.addEventListener('click', function() {
+  event.preventDefault()
 
   const name = nameEl.value
   console.log(`Il tuo nome: ${name}`);
