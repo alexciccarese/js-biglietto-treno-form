@@ -1,7 +1,11 @@
 // select input elements
+const nameEl = document.getElementById('name')
 const ageEl = document.getElementById('età')
 const kmEl = document.getElementById('km')
 const button = document.querySelector('button')
+
+console.log(name.value);
+
 
 //al click stampiamo in console
 button.addEventListener('click', function() {
