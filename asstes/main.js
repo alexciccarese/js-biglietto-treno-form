@@ -33,13 +33,13 @@ button.addEventListener('click', function() {
     
   
   if (age < 18 ) {
-    discount = totallPrice * 0.8
+    discount = totallPrice * 0.2
     discountText = 'Sconto 20%'
     console.log(discountText)
     
     
   } else if (age >= 65) {
-    discount = totallPrice * 0.6
+    discount = totallPrice * 0.4
     discountText = 'Sconto 40%'    
     console.log(discountText)
   }
